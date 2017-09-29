@@ -78,12 +78,12 @@ function stopTimer() {
 }
 
 function popupAnswer() {//after click or timeout shows image of answer
-  $("#popup").attr("src", "../trivia-game/assets/images/" + progression + ".jpg");
+  $("#popup").attr("src", "assets/images/" + progression + ".jpg");
   setTimeout(clearImage, 2000);
 }
 
 function clearImage() {
-  $("#popup").attr("src", "../trivia-game/assets/images/start.jpg");
+  $("#popup").attr("src", "assets/images/start.jpg");
 }
 
 function endGame() {
