@@ -129,12 +129,16 @@ $("#reset").on("click", function() {
     reset();
   })
 
+
+$(document).ready(function() {
+  reset();
+})
+
 // $("#reset").on("click", function() {
 //   reset();
 //   $("#endreset").clear();
 // })
 
-reset();
 
 //game description and 'press to start' button
 //var useranswers = [];
