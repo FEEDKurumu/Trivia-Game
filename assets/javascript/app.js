@@ -1,11 +1,16 @@
 var gameData = {
-  q1: ["q1?", "a1correct", "a2i", "a3i", "a4i"],
-  q2: ["q2?", "a1i", "a2correct", "a3i", "a4i"],
-  q3: ["q3?", "a1i", "a2i", "a3correct", "a4i"]
+  q1: ["The first panda that came to the United States stayed where?", "Chicago", "New York", "San Francisco", "Miami"],
+  q2: ["How many fingers are on a panda's paw?", "7", "6", "5", "4"],
+  q3: ["Pandas eat 99% this:", "leaves", "rice", "bamboo", "fish"],
+  q4: ["How many pandas are left in the world? (approx)", "1000", "2000", "3000", "4000"],
+  q5: ["When are pandas usually born?", "Jan-Feb", "Apr-May", "Aug-Sept", "Nov-Dec"],
+  q6: ["How many teeth do pandas have?", "24", "32", "42", "50"],
+  q7: ["How long do pandas spend per day eating bamboo?", "7-10", "11-13", "14-16", "17-19"],
+  q8: ["Do pandas hibernate?", "Yes", "No", "Sometimes", "If they have food"]
 };
 
 var progression;//question number. 0 means game not running
-var correctAnswers = [1, 2, 3];//array of correct answers
+var correctAnswers = [1, 2, 3, 1, 3, 3, 3, 1];//array of correct answers
 var userAnswers = [];//player's answers get pushed here
 var userCorrect;//counts correct answers at end
 var userIncorrect;//counts incorrect answers at end
@@ -53,11 +58,12 @@ function startTimer() {
 function timerCount() {
   time--;
   $("#timer").html(time);
-  if (time === -1) {
+  if (time === 0) {
     stopTimer();
+    popupAnswer();
     userAnswers.push("timeout");
     progression++;
-      if (progression === 4) {
+      if (progression === 9) {
         endGame();
         return;
       }
@@ -89,7 +95,8 @@ function endGame() {
       userIncorrect++;
     }
   }
-  $("#q").html("correct:" + userCorrect + ". incorrect:" + userIncorrect);
+  $("#q").html("<p>Final score!</p><p>Correct:" + userCorrect + 
+    " Incorrect:" + userIncorrect + "</p>");
   $("#a1").html("")
   $("#a2").html("")
   $("#a3").html("")
@@ -110,7 +117,7 @@ $("button").on("click", function() {
     var temp = ($(this).attr("value"))
     userAnswers.push(temp);
     progression++;
-    if (progression === 4) {
+    if (progression === 9) {
       setTimeout(endGame, 2000);
       return;
       }

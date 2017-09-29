@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-size: 144px;
+  font-size: 100px;
   text-align: center;
 }
 
@@ -16,23 +16,39 @@ h1 {
 #t {
   height: 150px;
   width: 250px;
-  border: 1px solid black;
 }
 
 #question {
   height: 150px;
   width: 840px;
-  border: 1px solid black;
+}
+
+#timer {
+  font-family: Arial;
+  font-size: 100px;
+  text-align: center;
+}
+
+#q {
+  font-family: Arial;
+  font-size: 50px
+}
+
+#a1, #a2, #a3, #a4 {
+  font-family: Helvectica;
+  font-size: 60px;
+  text-align: center;
 }
 
 #popup {
   position: absolute;
-  top: 15%;
+  top: 26%;
   left: 20%;
-  border: 1px solid;
 }
 
 #reset {
-  height: 100px;
-  width: 200px;
+  height: 75px;
+  width: 175px;
+  font-family: Helvectica;
+  font-size: 30px;
 }
